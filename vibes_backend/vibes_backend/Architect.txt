@@ -1,0 +1,83 @@
+1. Authentication
+
+Sign up / Login
+
+JWT tokens or sessions
+
+Password reset, email verification
+
+2. Profiles
+
+Avatar, bio, username
+
+Followers / following
+
+Status, settings
+
+3. Feed
+
+Posts (text, images, videos)
+
+Likes, comments
+
+Reposts / shares (optional)
+
+Media uploads
+
+4. Real-time Chat
+
+One-to-one chat
+
+Group chat (optional)
+
+Read receipts, typing indicators
+
+Notifications
+
+5. Notifications
+
+Someone followed you
+
+Someone liked your post
+
+Someone sent a message
+
+6. Search
+
+Users
+
+Posts
+
+Hashtags
+
+7. Admin panel
+
+Manage content
+
+User reports
+
+Bans & moderation tools
+
+🔧 Tech Stack suggestions
+
+Since you’re using Django:
+
+Backend
+
+Django + Django REST Framework
+
+Django Channels (for WebSocket chat)
+
+Redis (for pub/sub real-time features)
+
+PostgreSQL (recommended for production)
+
+Frontend:
+
+Depending on what you want:
+
+React Native → mobile app
+
+React / Next.js → web app
+
+Flutter → mobile + web

@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    @apply dark:bg-[#11111B] dark:text-slate-200;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  * {
+    @apply border-slate-200 dark:border-slate-700;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium
+           transition-all duration-200 ease-out
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98]
+           dark:focus:ring-offset-[#11111B];
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-purple-600 to-purple-500 text-white
+           hover:from-purple-700 hover:to-purple-600
+           focus:ring-purple-500
+           dark:from-purple-500 dark:to-purple-400
+           dark:hover:from-purple-600 dark:hover:to-purple-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-slate-100 text-slate-700 hover:bg-slate-200
+           focus:ring-slate-400
+           dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700
+           dark:focus:ring-slate-600;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-slate-200 bg-white text-slate-700
+           hover:border-purple-300 hover:text-purple-600 hover:bg-purple-50
+           focus:ring-purple-500
+           dark:border-slate-700 dark:bg-transparent dark:text-slate-200
+           dark:hover:border-purple-400 dark:hover:text-purple-400 dark:hover:bg-purple-900/20;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100 hover:text-slate-800
+           focus:ring-slate-400
+           dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white
+           placeholder-slate-400 transition-all duration-200
+           focus:outline-none focus:ring-0 focus:border-purple-500
+           disabled:bg-slate-100 disabled:cursor-not-allowed
+           dark:border-slate-700 dark:bg-[#1E1E2E] dark:text-slate-200
+           dark:placeholder-slate-500 dark:focus:border-purple-400
+           dark:disabled:bg-slate-800;
+  }
+
+  .input-icon {
+    @apply absolute left-4 top-1/2 -translate-y-1/2 text-slate-400
+           dark:text-slate-500;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100
+           transition-all duration-200 hover:shadow-md
+           dark:bg-[#181825] dark:border-slate-800 dark:hover:shadow-lg dark:hover:shadow-black/20;
+  }
+
+  .card-flat {
+    @apply bg-white rounded-2xl border border-slate-100
+           dark:bg-[#181825] dark:border-slate-800;
+  }
+
+  /* Avatar */
+  .avatar {
+    @apply rounded-full bg-gradient-to-br from-purple-400 to-purple-600
+           flex items-center justify-center text-white font-semibold
+           ring-2 ring-white dark:ring-slate-800;
+  }
+
+  /* Links */
+  .link {
+    @apply text-purple-600 hover:text-purple-700 font-medium
+           transition-colors underline-offset-2 hover:underline
+           dark:text-purple-400 dark:hover:text-purple-300;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-purple-100 text-purple-700
+           dark:bg-purple-900/30 dark:text-purple-300;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20
+           dark:bg-[#1E1E2E]/80 dark:border-slate-700/50;
+  }
+
+  /* Settings tile */
+  .settings-tile {
+    @apply flex items-center gap-4 p-4 rounded-xl transition-colors
+           hover:bg-slate-50 dark:hover:bg-slate-800/50;
+  }
+
+  .settings-icon {
+    @apply p-2.5 rounded-xl bg-purple-100 text-purple-600
+           dark:bg-purple-900/30 dark:text-purple-400;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .shadow-button {
+    box-shadow: 0 2px 8px -2px rgba(147, 51, 234, 0.4);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .shadow-soft {
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Typing indicator animation */
+.typing-dot {
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar for supported browsers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full
+         bg-slate-200 dark:bg-slate-700
+         transition-colors duration-200 ease-in-out
+         focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+         dark:focus:ring-offset-[#11111B];
+}
+
+.toggle-switch[data-checked="true"] {
+  @apply bg-purple-600 dark:bg-purple-500;
+}
+
+.toggle-switch-dot {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white shadow-lg
+         transition-transform duration-200 ease-in-out;
+}
+
+.toggle-switch[data-checked="true"] .toggle-switch-dot {
+  @apply translate-x-6;
+}
+
+.toggle-switch[data-checked="false"] .toggle-switch-dot {
+  @apply translate-x-1;
+}
