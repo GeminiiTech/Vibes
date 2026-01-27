@@ -1,4 +1,4 @@
-const BASE_URL = '';
+const BASE_URL = 'https://vibes-lb2k.onrender.com';
 
 export const api = {
   async request(endpoint, options = {}) {
