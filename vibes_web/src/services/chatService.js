@@ -33,9 +33,7 @@ class ChatWebSocket {
         return;
       }
 
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      const host = window.location.host;
-      const wsUrl = `${protocol}//${host}/ws/chat/${this.conversationId}/?token=${token}`;
+      const wsUrl = `wss://vibes-lb2k.onrender.com/ws/chat/${this.conversationId}/?token=${token}`;
 
       this.socket = new WebSocket(wsUrl);
 

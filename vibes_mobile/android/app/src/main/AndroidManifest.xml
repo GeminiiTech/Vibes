@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:label="vibes_mobile"
-        android:name="${applicationName}"
+        android:name="Vibes"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
